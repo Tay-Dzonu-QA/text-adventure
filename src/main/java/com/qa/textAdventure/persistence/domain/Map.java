@@ -39,10 +39,10 @@ public class Map {
 	}
 
 	public void showMap(Pair<Integer, Integer> location) {
-		String grid = "         1       2       3       4       5       6       7       8      9      10 ";
-		System.out.println(grid + "\n\n");
-		String barrier = "     ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||";
-		String next = "     ||      ||      ||      ||      ||      ||      ||      ||      ||      ||      ||";
+		String grid = "   N     1       2       3       4       5       6       7       8      9      10 ";
+		System.out.println(grid + "\n W + E\n   S");
+		String barrier = "     ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||";
+		String next = "     ||       ||       ||       ||       ||       ||       ||       ||       ||       ||       ||";
 		String begin = "|| ";
 		String mid = " || ";
 		String end = " ||";
@@ -50,7 +50,7 @@ public class Map {
 			System.out.print(barrier + "\n" + next + "\n");
 			System.out.print("  " + i + "  " + begin); 
 			for (int j = 0; j < 10; j++) {
-				if (j == 8) {
+				if (j == 9) {
 					System.out.print(gameMap[i][j].getName() + end);
 				} else {
 					System.out.print(gameMap[i][j].getName() + mid);
@@ -72,6 +72,9 @@ public class Map {
 	}
 	public Location getLocation(Pair<Integer, Integer> here) {
 		return gameMap[here.left][here.right];
+	}
+	public void discoverLocation(Pair<Integer, Integer> here) {
+		gameMap[here.left][here.right].discovered();
 	}
 
 

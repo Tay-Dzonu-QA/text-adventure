@@ -12,7 +12,7 @@ public abstract class Location {
 		if (discovered) {
 			return name;
 		} else {
-			return "??? ";
+			return " ??? ";
 		}
 	}
 

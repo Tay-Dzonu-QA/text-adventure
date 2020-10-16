@@ -141,19 +141,21 @@ public class PlayGame {
 		while (!moved) {
 			String direction = utils.getString();
 			if (direction.equals("NORTH")) {
-				this.mapLocation = new Pair<Integer, Integer>(this.mapLocation.left + 1, this.mapLocation.right);
-			} else if (direction.equals("SOUTH")) {
 				this.mapLocation = new Pair<Integer, Integer>(this.mapLocation.left - 1, this.mapLocation.right);
-
+				moved=true;
+			} else if (direction.equals("SOUTH")) {
+				this.mapLocation = new Pair<Integer, Integer>(this.mapLocation.left + 1, this.mapLocation.right);
+				moved=true;
 			} else if (direction.equals("EAST")) {
 				this.mapLocation = new Pair<Integer, Integer>(this.mapLocation.left, this.mapLocation.right + 1);
-
+				moved=true;
 			} else if (direction.equals( "WEST")) {
 				this.mapLocation = new Pair<Integer, Integer>(this.mapLocation.left, this.mapLocation.right - 1);
-
+				moved=true;
 			} else {
 				System.out.println("Please select NORTH, SOUTH, EAST or WEST.");
 			}
+			map.discoverLocation(mapLocation);
 		}
 	}
 

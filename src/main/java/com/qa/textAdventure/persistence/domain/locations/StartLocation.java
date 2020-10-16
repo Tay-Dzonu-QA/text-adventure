@@ -9,7 +9,7 @@ public class StartLocation extends Location {
 
 	public StartLocation() {
 		super();
-		this.name = "camp";
+		this.name = "camp ";
 		this.monster=null;
 		this.item=null;
 		this.discovered=true;

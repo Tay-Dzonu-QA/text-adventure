@@ -21,7 +21,7 @@ public class Character {
 		this.health = 100;
 	}
 	public void healthLoss(int lostHealth) {
-		this.health =-lostHealth;
+		this.health -=lostHealth;
 	}
 	
 	public void addHealth() {
