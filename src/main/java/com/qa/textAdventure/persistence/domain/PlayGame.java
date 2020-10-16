@@ -1,8 +1,5 @@
 package com.qa.textAdventure.persistence.domain;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import com.mysql.cj.conf.ConnectionUrlParser.Pair;
 import com.qa.textAdventure.utils.Utils;
 
@@ -108,7 +105,6 @@ public class PlayGame {
 				victory = true;
 				continue;
 			}
-
 			System.out.println("The monster attacks with" + monster.getAttack() + "ATTACK. You defend with"
 					+ this.character.getDefense() + "DEFENSE.");
 			if (monster.getAttack() > this.character.getDefense()) {
